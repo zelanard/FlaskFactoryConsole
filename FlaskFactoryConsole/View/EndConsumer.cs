@@ -9,22 +9,27 @@ namespace FlaskFactoryConsole.View
     /// </summary>
     public class EndConsumer : Consumer
     {
+		private string Title;
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="buffer"></param>
-        public EndConsumer(ConveyerBelt buffer) : base(buffer) { }
+        public EndConsumer(ConveyerBelt buffer, string title) : base(buffer) 
+		{
+			Title = title;
+		}
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public void Print()
+		public void Print(object obj)
 		{
 			while (true)
 			{
 				if (CurrentFlask != null)
 				{
-					Logger.LogConsumption(CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID);
+					Logger.LogConsumption(Title, CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID);
 					CurrentFlask = null;
 				}
 			}

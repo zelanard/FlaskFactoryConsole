@@ -19,10 +19,10 @@ namespace FlaskFactoryConsole.View
 			Console.ResetColor();
 		}
 
-		public static void LogConsumption(string flaskType, int id)
+		public static void LogConsumption(string title, string flaskType, int id)
 		{
 			SetColor(flaskType);
-			Console.WriteLine($"Consumed: {flaskType}, ID: {id}");
+			Console.WriteLine($"{title} Consumed: {flaskType}, ID: {id}");
 			Console.ResetColor();
 		}
 

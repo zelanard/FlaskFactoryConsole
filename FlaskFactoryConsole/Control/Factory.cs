@@ -15,8 +15,8 @@ namespace FlaskFactoryConsole.Control
         public static ConveyerBelt SodaBelt = new ConveyerBelt();
         public static Producer Producer = new Producer(ProductionBelt);
         public static Splitter Splitter = new Splitter(ProductionBelt, BeerBelt, SodaBelt);
-        public static EndConsumer BeerConsumer = new EndConsumer(BeerBelt);
-        public static EndConsumer SodaConsumer = new EndConsumer(SodaBelt);
+        public static EndConsumer BeerConsumer = new EndConsumer(BeerBelt, "BeerConsumer");
+        public static EndConsumer SodaConsumer = new EndConsumer(SodaBelt, "SodaConsumer");
 
         /// <summary>
         /// 
@@ -28,10 +28,10 @@ namespace FlaskFactoryConsole.Control
             ThreadPool.QueueUserWorkItem(Splitter.Pull);
             ThreadPool.QueueUserWorkItem(BeerConsumer.Pull);
             ThreadPool.QueueUserWorkItem(SodaConsumer.Pull);
-            ThreadPool.QueueUserWorkItem(state => BeerConsumer.Print());
-            ThreadPool.QueueUserWorkItem(state => SodaConsumer.Print());
+            ThreadPool.QueueUserWorkItem(BeerConsumer.Print);
+            ThreadPool.QueueUserWorkItem(SodaConsumer.Print);
 
-            ThreadPool.QueueUserWorkItem(state => Splitter.Push(FlaskTypes.BeerFlask));
+            ThreadPool.QueueUserWorkItem(Splitter.Push);
 
             ProductionThread.Start();
             ProductionThread.Join();
