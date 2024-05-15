@@ -1,6 +1,6 @@
 ﻿using FlaskFactoryConsole.Model.FactoryControls;
-using FlaskFactoryConsole.Model.Flasks;
 using FlaskFactoryConsole.View;
+using System.Threading;
 
 namespace FlaskFactoryConsole.Utils
 {
@@ -13,6 +13,7 @@ namespace FlaskFactoryConsole.Utils
 		ConveyerBelt BeerBelt;
 		ConveyerBelt SodaBelt;
 
+<<<<<<< HEAD
 		/// <summary>
 		/// Constructor for the Splitter class. Initializes the production, beer, and soda belts.
 		/// </summary>
@@ -52,3 +53,35 @@ namespace FlaskFactoryConsole.Utils
 		}
 	}
 }
+=======
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="flaskType"></param>
+        public void Push(object obj)
+        {
+            while (true)
+            {
+                if (CurrentFlask != null)
+                {
+                    switch (CurrentFlask.GetFlaskType())
+                    {
+                        case FlaskTypes.BeerFlask:
+                            BeerBelt.Enqueue(CurrentFlask);
+                            Logger.LogSplitting(FlaskTypes.BeerFlask.ToString(), CurrentFlask.ID, "BeerBelt");
+                            break;
+                        case FlaskTypes.SodaFlask:
+                            SodaBelt.Enqueue(CurrentFlask);
+                            Logger.LogSplitting(FlaskTypes.SodaFlask.ToString(), CurrentFlask.ID, "SodaBelt");
+                            break;
+                        default:
+                            break;
+                    }
+                    CurrentFlask = null;
+                }
+                Thread.Sleep(2f.ToMiliseconds());
+            }
+        }
+    }
+}
+>>>>>>> d87458825c7242059b2d218e12823b095e69c8d8

@@ -2,20 +2,22 @@
 using FlaskFactoryConsole.Model.Flasks;
 using FlaskFactoryConsole.Utils;
 using FlaskFactoryConsole.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace FlaskFactoryConsole.Model
 {
+<<<<<<< HEAD
 	/// <summary>
 	/// The Producer class is responsible for producing flasks and placing them on the production belt.
 	/// It implements the IPusher interface.
 	/// </summary>
 	public class Producer : IPusher
+=======
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Producer : IPusher
+>>>>>>> d87458825c7242059b2d218e12823b095e69c8d8
 	{
 		/// <summary>
 		/// The production belt where the producer places the flasks.
@@ -72,7 +74,7 @@ namespace FlaskFactoryConsole.Model
 					Push(FlaskTypes.SodaFlask);
 				}
 				isBeer = !isBeer;
-				Thread.Sleep(1.ToMiliseconds());
+				Thread.Sleep(0.2f.ToMiliseconds());
 			}
 		}
 	}

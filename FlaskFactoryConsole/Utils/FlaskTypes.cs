@@ -1,7 +1,4 @@
-﻿using System;
-using FlaskFactoryConsole.Model.Flasks;
-
-namespace FlaskFactoryConsole.Utils
+﻿namespace FlaskFactoryConsole.Utils
 {
 	/// <summary>
 	/// The FlaskTypes enum represents the different types of flasks that can be produced in the factory.
