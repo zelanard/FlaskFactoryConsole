@@ -33,10 +33,18 @@ namespace FlaskFactoryConsole.Utils
         /// <param name="id">The ID of the flask to be consumed.</param>
         public void Pull(object obj)
         {
-            if (CurrentFlask == null && Buffer.Count > 0)
+            while (true)
             {
-                CurrentFlask = Buffer.Dequeue();
+                lock (this)
+                {
+                    if (CurrentFlask == null && Buffer.Count > 0)
+                    {
+                        CurrentFlask = Buffer.Dequeue();
+                    }
+                }
             }
+
+
         }
     }
 }
