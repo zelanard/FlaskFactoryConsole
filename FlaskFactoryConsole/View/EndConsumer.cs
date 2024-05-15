@@ -20,11 +20,15 @@ namespace FlaskFactoryConsole.View
         /// </summary>
         public void Print()
         {
-            if (CurrentFlask != null)
+            while (true)
             {
-                Console.WriteLine(CurrentFlask.ToString());
-                CurrentFlask = null;
+                if (CurrentFlask != null)
+                {
+                    Console.WriteLine(CurrentFlask.ToString());
+                    CurrentFlask = null;
+                }
             }
+
         }
     }
 }

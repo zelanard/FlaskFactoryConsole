@@ -28,6 +28,8 @@ namespace FlaskFactoryConsole.Control
             ThreadPool.QueueUserWorkItem(Splitter.Pull);
             ThreadPool.QueueUserWorkItem(BeerConsumer.Pull);
             ThreadPool.QueueUserWorkItem(SodaConsumer.Pull);
+            ThreadPool.QueueUserWorkItem(state => BeerConsumer.Print());
+            ThreadPool.QueueUserWorkItem(state => SodaConsumer.Print());
 
             ThreadPool.QueueUserWorkItem(state => Splitter.Push(FlaskTypes.BeerFlask));
 
