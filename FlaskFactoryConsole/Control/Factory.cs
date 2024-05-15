@@ -24,12 +24,14 @@ namespace FlaskFactoryConsole.Control
         public void Run()
         {
             Thread ProductionThread = new Thread(Producer.Run);
-            ProductionThread.Start();
 
             ThreadPool.QueueUserWorkItem(Splitter.Pull);
             ThreadPool.QueueUserWorkItem(BeerConsumer.Pull);
             ThreadPool.QueueUserWorkItem(SodaConsumer.Pull);
 
+            ThreadPool.QueueUserWorkItem(Splitter.Push);
+
+            ProductionThread.Start();
             ProductionThread.Join();
         }
     }
