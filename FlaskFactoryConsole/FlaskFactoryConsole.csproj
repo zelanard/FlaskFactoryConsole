@@ -59,6 +59,7 @@
     <Compile Include="Utils\FlaskTypes.cs" />
     <Compile Include="Utils\IntExtensions.cs" />
     <Compile Include="View\EndConsumer.cs" />
+    <Compile Include="View\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

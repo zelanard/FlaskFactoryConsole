@@ -1,5 +1,6 @@
 ﻿using FlaskFactoryConsole.Model.FactoryControls;
 using FlaskFactoryConsole.Model.Flasks;
+using FlaskFactoryConsole.View;
 
 namespace FlaskFactoryConsole.Utils
 {
@@ -23,27 +24,29 @@ namespace FlaskFactoryConsole.Utils
             SodaBelt = sodaBelt;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="flaskType"></param>
-        public void Push(object obj)
-        {
-            if (CurrentFlask != null)
-            {
-                switch (CurrentFlask.GetFlaskType())
-                {
-                    case FlaskTypes.BeerFlask:
-                        BeerBelt.Enqueue(CurrentFlask);
-                        break;
-                    case FlaskTypes.SodaFlask:
-                        SodaBelt.Enqueue(CurrentFlask);
-                        break;
-                    default: 
-                        break;
-                }
-                CurrentFlask = null;
-            }
-        }
-    }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="flaskType"></param>
+		public void Push(object obj)
+		{
+			if (CurrentFlask != null)
+			{
+				switch (CurrentFlask.GetFlaskType())
+				{
+					case FlaskTypes.BeerFlask:
+						BeerBelt.Enqueue(CurrentFlask);
+						Logger.LogSplitting(FlaskTypes.BeerFlask.ToString(), CurrentFlask.ID, "BeerBelt");
+						break;
+					case FlaskTypes.SodaFlask:
+						SodaBelt.Enqueue(CurrentFlask);
+						Logger.LogSplitting(FlaskTypes.SodaFlask.ToString(), CurrentFlask.ID, "SodaBelt");
+						break;
+					default:
+						break;
+				}
+				CurrentFlask = null;
+			}
+		}
+	}
 }

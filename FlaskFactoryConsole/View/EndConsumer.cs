@@ -15,20 +15,19 @@ namespace FlaskFactoryConsole.View
         /// <param name="buffer"></param>
         public EndConsumer(ConveyerBelt buffer) : base(buffer) { }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Print()
-        {
-            while (true)
-            {
-                if (CurrentFlask != null)
-                {
-                    Console.WriteLine(CurrentFlask.ToString());
-                    CurrentFlask = null;
-                }
-            }
-
-        }
-    }
+		/// <summary>
+		/// 
+		/// </summary>
+		public void Print()
+		{
+			while (true)
+			{
+				if (CurrentFlask != null)
+				{
+					Logger.LogConsumption(CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID);
+					CurrentFlask = null;
+				}
+			}
+		}
+	}
 }

@@ -9,7 +9,7 @@ namespace FlaskFactoryConsole.Utils
     /// </summary>
     public class ConveyerBelt
     {
-        public const int MAX_SIZE = 100;
+        public const int MAX_SIZE = 99;
         private Queue<Flask> flasks;
         private readonly object lockObject = new object();
 
