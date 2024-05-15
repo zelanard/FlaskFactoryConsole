@@ -1,6 +1,4 @@
-﻿using FlaskFactoryConsole.Utils;
-
-namespace FlaskFactoryConsole.Model
+﻿namespace FlaskFactoryConsole.Utils
 {
     public class Splitter : Consumer
     {
