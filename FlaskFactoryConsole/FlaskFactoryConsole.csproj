@@ -55,7 +55,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Consumer.cs" />
+    <Compile Include="Utils\FlaskExtensions.cs" />
     <Compile Include="Utils\FlaskTypes.cs" />
+    <Compile Include="Utils\IntExtensions.cs" />
     <Compile Include="View\EndConsumer.cs" />
   </ItemGroup>
   <ItemGroup>

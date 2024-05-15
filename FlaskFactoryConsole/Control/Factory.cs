@@ -1,5 +1,4 @@
 ﻿using FlaskFactoryConsole.Utils;
-using FlaskFactoryConsole.Model.FactoryControls;
 using FlaskFactoryConsole.Model;
 using FlaskFactoryConsole.View;
 using System.Threading;
@@ -14,20 +13,24 @@ namespace FlaskFactoryConsole.Control
         public static ConveyerBelt ProductionBelt = new ConveyerBelt();
         public static ConveyerBelt BeerBelt = new ConveyerBelt();
         public static ConveyerBelt SodaBelt = new ConveyerBelt();
-
         public static Producer Producer = new Producer(ProductionBelt);
         public static Splitter Splitter = new Splitter(ProductionBelt, BeerBelt, SodaBelt);
-
         public static EndConsumer BeerConsumer = new EndConsumer(BeerBelt);
         public static EndConsumer SodaConsumer = new EndConsumer(SodaBelt);
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Run()
         {
             Thread ProductionThread = new Thread(Producer.Run);
+            ProductionThread.Start();
 
             ThreadPool.QueueUserWorkItem(Splitter.Pull);
             ThreadPool.QueueUserWorkItem(BeerConsumer.Pull);
             ThreadPool.QueueUserWorkItem(SodaConsumer.Pull);
+
+            ProductionThread.Join();
         }
     }
 }

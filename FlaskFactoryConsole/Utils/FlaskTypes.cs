@@ -11,37 +11,4 @@ namespace FlaskFactoryConsole.Utils
         BeerFlask,
         SodaFlask
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public static class FlaskExtensions
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="flask"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static FlaskTypes GetFlaskType(this Flask flask)
-        {
-            switch (flask)
-            {
-                case BeerFlask beerFlask:
-                    return FlaskTypes.BeerFlask;
-                case SodaFlask sodaFlask:
-                    return FlaskTypes.SodaFlask;
-                default:
-                    throw new NotImplementedException();
-            }
-        }
-    }
-    public static class IntExtension
-    {
-        public static int ToMiliseconds(this int value)
-        {
-            return value * 1000;
-        }
-    }
-
 }
