@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlaskFactoryConsole.Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace FlaskFactoryConsole
     {
         static void Main(string[] args)
         {
+            Factory factory = new Factory();
+            factory.Run();
         }
     }
 }

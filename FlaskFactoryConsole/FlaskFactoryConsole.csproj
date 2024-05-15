@@ -45,11 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\Factory.cs" />
-    <Compile Include="Model\Buffer.cs" />
+    <Compile Include="Model\ConveyerBelt.cs" />
     <Compile Include="Model\Flasks\BeerFlask.cs" />
     <Compile Include="Model\Flasks\Flask.cs" />
     <Compile Include="Model\Flasks\SodaFlask.cs" />
     <Compile Include="Model\IPusher.cs" />
+    <Compile Include="Model\Producer.cs" />
     <Compile Include="Model\Splitter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

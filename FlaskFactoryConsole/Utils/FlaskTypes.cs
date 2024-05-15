@@ -36,4 +36,12 @@ namespace FlaskFactoryConsole.Utils
             }
         }
     }
+    public static class IntExtension
+    {
+        public static int ToMiliseconds(this int value)
+        {
+            return value * 1000;
+        }
+    }
+
 }

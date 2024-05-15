@@ -6,18 +6,18 @@ namespace FlaskFactoryConsole.Utils
     /// <summary>
     /// 
     /// </summary>
-    public class Buffer
+    public class ConveyerBelt
     {
         public const int MAX_SIZE = 100;
-        private Queue<Flask> buffer;
+        private Queue<Flask> flasks;
         private readonly object lockObject = new object();
 
         /// <summary>
         /// 
         /// </summary>
-        public Buffer()
+        public ConveyerBelt()
         {
-            buffer = new Queue<Flask>();
+            flasks = new Queue<Flask>();
         }
 
         /// <summary>
@@ -28,9 +28,9 @@ namespace FlaskFactoryConsole.Utils
         {
             lock (lockObject)
             {
-                if (buffer.Count < MAX_SIZE)
+                if (flasks.Count < MAX_SIZE)
                 {
-                    buffer.Enqueue(item);
+                    flasks.Enqueue(item);
                 }
             }
         }
@@ -43,17 +43,20 @@ namespace FlaskFactoryConsole.Utils
         {
             lock (lockObject)
             {
-                return buffer.Count > 0 ? buffer.Dequeue() : null;
+                return flasks.Count > 0 ? flasks.Dequeue() : null;
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int Count
         {
             get
             {
                 lock (lockObject)
                 {
-                    return buffer.Count;
+                    return flasks.Count;
                 }
             }
         }

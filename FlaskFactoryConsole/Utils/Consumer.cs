@@ -16,13 +16,13 @@ namespace FlaskFactoryConsole.Utils
         /// <summary>
         /// Buffer from which the flasks are consumed.
         /// </summary>
-        protected Buffer Buffer { get; private set; }
+        protected ConveyerBelt Buffer { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the Consumer class with the specified buffer.
         /// </summary>
         /// <param name="buffer">The buffer from which flasks are to be consumed.</param>
-        public Consumer(Buffer buffer)
+        public Consumer(ConveyerBelt buffer)
         {
             Buffer = buffer;
         }
@@ -33,9 +33,9 @@ namespace FlaskFactoryConsole.Utils
         /// <param name="id">The ID of the flask to be consumed.</param>
         public void Pull()
         {
-            if (CurrentFlask == null && Buffer.flasks.Count > 0)
+            if (CurrentFlask == null && Buffer.Count > 0)
             {
-                CurrentFlask = Buffer.flasks.Dequeue();
+                CurrentFlask = Buffer.Dequeue();
             }
         }
     }
