@@ -9,14 +9,14 @@ namespace FlaskFactoryConsole.Model
     public class Buffer
     {
         public const int MAX_SIZE = 100;
-        public Queue<Flask> _flasks;
+        public Queue<Flask> flasks;
         
         /// <summary>
         /// 
         /// </summary>
         public Buffer()
         {
-            _flasks = new Queue<Flask>();
+            flasks = new Queue<Flask>();
         }
     }
 }

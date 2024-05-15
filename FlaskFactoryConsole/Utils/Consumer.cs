@@ -1,38 +1,61 @@
-﻿using FlaskFactoryConsole.Model;
+﻿using System.Collections.Generic;
 using FlaskFactoryConsole.Model.Flasks;
 
-namespace FlaskFactoryConsole.Utils
+namespace FlaskFactoryConsole.Model.FactoryControls
 {
     /// <summary>
-    /// Abstract class representing a consumer that processes flasks from a buffer.
+    /// 
     /// </summary>
-    public abstract class Consumer
+    public class Buffer
     {
-        /// <summary>
-        /// Holds the current flask being processed.
-        /// </summary>
-        protected Flask CurrentFlask;
+        public const int MAX_SIZE = 100;
+        private Queue<Flask> buffer;
+        private readonly object lockObject = new object();
 
         /// <summary>
-        /// Buffer from which the flasks are consumed.
+        /// 
         /// </summary>
-        protected Buffer Buffer { get; private set; }
-
-        /// <summary>
-        /// Initializes a new instance of the Consumer class with the specified buffer.
-        /// </summary>
-        /// <param name="buffer">The buffer from which flasks are to be consumed.</param>
-        public Consumer(Buffer buffer)
+        public Buffer()
         {
-            Buffer = buffer;
+            buffer = new Queue<Flask>();
         }
 
         /// <summary>
-        /// Consumes a flask from the buffer based on the specified flask ID.
+        /// 
         /// </summary>
-        /// <param name="id">The ID of the flask to be consumed.</param>
-        public void Pull()
+        /// <param name="item"></param>
+        public void Enqueue(Flask item)
         {
+            lock (lockObject)
+            {
+                if (buffer.Count < MAX_SIZE)
+                {
+                    buffer.Enqueue(item);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Flask Dequeue()
+        {
+            lock (lockObject)
+            {
+                return buffer.Count > 0 ? buffer.Dequeue() : null;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                lock (lockObject)
+                {
+                    return buffer.Count;
+                }
+            }
         }
     }
 }

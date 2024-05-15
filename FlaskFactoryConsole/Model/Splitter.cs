@@ -1,6 +1,9 @@
-﻿namespace FlaskFactoryConsole.Model
+﻿using FlaskFactoryConsole.Utils;
+
+namespace FlaskFactoryConsole.Model
 {
-    public class Splitter
+    public class Splitter : Consumer
     {
+        public Splitter(Buffer buffer) : base(buffer) { }
     }
 }
