@@ -27,7 +27,7 @@ namespace FlaskFactoryConsole.Utils
         /// 
         /// </summary>
         /// <param name="flaskType"></param>
-        public void Push(FlaskTypes flaskType)
+        public void Push(object obj)
         {
             if (CurrentFlask != null)
             {

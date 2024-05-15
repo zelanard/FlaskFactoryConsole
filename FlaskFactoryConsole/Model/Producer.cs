@@ -29,21 +29,24 @@ namespace FlaskFactoryConsole.Model
         /// 
         /// </summary>
         /// <param name="flaskType"></param>
-        public void Push(FlaskTypes flaskType)
+        public void Push(object flaskType)
         {
-                if (ProductionBelt.Count < ConveyerBelt.MAX_SIZE)
+
+            if (ProductionBelt.Count < ConveyerBelt.MAX_SIZE)
+            {
+                FlasksProduced++;
+                switch (flaskType)
                 {
-                    FlasksProduced++;
-                    switch (flaskType)
-                    {
-                        case FlaskTypes.BeerFlask:
-                            ProductionBelt.Enqueue(new BeerFlask(FlasksProduced));
-                            break;
-                        case FlaskTypes.SodaFlask:
-                            ProductionBelt.Enqueue(new SodaFlask(FlasksProduced));
-                            break;
-                    }
+                    case FlaskTypes.BeerFlask:
+                        ProductionBelt.Enqueue(new BeerFlask(FlasksProduced));
+                        break;
+                    case FlaskTypes.SodaFlask:
+                        ProductionBelt.Enqueue(new SodaFlask(FlasksProduced));
+                        break;
+                    default:
+                        break;
                 }
+            }
         }
 
         /// <summary>

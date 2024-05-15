@@ -11,6 +11,6 @@ namespace FlaskFactoryConsole.Model.FactoryControls
         /// Pushes a flask of the specified type into the designated buffer or production line.
         /// </summary>
         /// <param name="flaskType">The type of flask to be pushed.</param>
-        void Push(FlaskTypes flaskType);
+        void Push(object obj);
     }
 }
