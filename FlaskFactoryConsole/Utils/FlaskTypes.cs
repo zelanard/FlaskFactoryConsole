@@ -1,7 +1,4 @@
-﻿using System;
-using FlaskFactoryConsole.Model.Flasks;
-
-namespace FlaskFactoryConsole.Utils
+﻿namespace FlaskFactoryConsole.Utils
 {
     /// <summary>
     /// 

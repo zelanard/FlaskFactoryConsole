@@ -1,5 +1,4 @@
 ﻿using FlaskFactoryConsole.Model.FactoryControls;
-using FlaskFactoryConsole.Model.Flasks;
 using FlaskFactoryConsole.View;
 using System.Threading;
 
@@ -50,7 +49,7 @@ namespace FlaskFactoryConsole.Utils
                     }
                     CurrentFlask = null;
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(2f.ToMiliseconds());
             }
         }
     }

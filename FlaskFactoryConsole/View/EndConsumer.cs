@@ -1,6 +1,4 @@
-﻿using FlaskFactoryConsole.Model;
-using FlaskFactoryConsole.Utils;
-using System;
+﻿using FlaskFactoryConsole.Utils;
 
 namespace FlaskFactoryConsole.View
 {

@@ -1,5 +1,4 @@
-﻿using FlaskFactoryConsole.Model;
-using FlaskFactoryConsole.Model.Flasks;
+﻿using FlaskFactoryConsole.Model.Flasks;
 
 namespace FlaskFactoryConsole.Utils
 {
@@ -43,8 +42,6 @@ namespace FlaskFactoryConsole.Utils
                     }
                 }
             }
-
-
         }
     }
 }

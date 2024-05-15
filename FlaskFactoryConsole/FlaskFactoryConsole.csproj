@@ -57,7 +57,7 @@
     <Compile Include="Utils\Consumer.cs" />
     <Compile Include="Utils\FlaskExtensions.cs" />
     <Compile Include="Utils\FlaskTypes.cs" />
-    <Compile Include="Utils\IntExtensions.cs" />
+    <Compile Include="Utils\NumberExtensions.cs" />
     <Compile Include="View\EndConsumer.cs" />
     <Compile Include="View\Logger.cs" />
   </ItemGroup>
