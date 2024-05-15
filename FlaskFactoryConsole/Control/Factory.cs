@@ -18,10 +18,9 @@ namespace FlaskFactoryConsole.Control
         public static EndConsumer BeerConsumer = new EndConsumer(BeerBelt);
         public static EndConsumer SodaConsumer = new EndConsumer(SodaBelt);
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Run()
+		/// The Factory class controls a beverage production line simulation.
+		/// It uses multiple threads to simulate the production, splitting, and consumption of flasks.
+		public void Run()
         {
             Thread ProductionThread = new Thread(Producer.Run);
 
