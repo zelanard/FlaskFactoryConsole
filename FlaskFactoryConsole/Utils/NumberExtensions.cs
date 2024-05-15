@@ -8,7 +8,7 @@ namespace FlaskFactoryConsole.Utils
     public static class NumberExtension
     {
         /// <summary>
-        /// 
+        /// Converts the represented int value to miliseconds
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -18,7 +18,7 @@ namespace FlaskFactoryConsole.Utils
         }
 
         /// <summary>
-        /// 
+        /// Converts the represented float value to miliseconds
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

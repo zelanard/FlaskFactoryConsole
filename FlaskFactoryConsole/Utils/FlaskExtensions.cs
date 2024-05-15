@@ -9,7 +9,7 @@ namespace FlaskFactoryConsole.Utils
     public static class FlaskExtensions
     {
         /// <summary>
-        /// 
+        /// Returns the type of the flask
         /// </summary>
         /// <param name="flask"></param>
         /// <returns></returns>

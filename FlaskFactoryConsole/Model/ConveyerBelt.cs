@@ -13,7 +13,7 @@ namespace FlaskFactoryConsole.Utils
         private readonly object lockObject = new object();
 
         /// <summary>
-        /// 
+        /// Initializes the ConveyerBelt and initializing the queue
         /// </summary>
         public ConveyerBelt()
         {
@@ -21,7 +21,7 @@ namespace FlaskFactoryConsole.Utils
         }
 
         /// <summary>
-        /// 
+        /// Takes the queue item and enqueues it into the flasks queue
         /// </summary>
         /// <param name="item"></param>
         public void Enqueue(Flask item)
@@ -36,7 +36,7 @@ namespace FlaskFactoryConsole.Utils
         }
 
         /// <summary>
-        /// 
+        /// Returns the queue item and dequeues it from the flasks queue
         /// </summary>
         /// <returns></returns>
         public Flask Dequeue()
@@ -48,7 +48,7 @@ namespace FlaskFactoryConsole.Utils
         }
 
         /// <summary>
-        /// 
+        /// Count of how many items in flasks queue
         /// </summary>
         public int Count
         {

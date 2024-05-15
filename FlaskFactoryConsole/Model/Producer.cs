@@ -22,7 +22,7 @@ namespace FlaskFactoryConsole.Model
 		}
 
 		/// <summary>
-		/// 
+		/// Pusher the flask out to the ProducerBelt
 		/// </summary>
 		/// <param name="flaskType"></param>
 		public void Push(object flaskType)
@@ -47,7 +47,7 @@ namespace FlaskFactoryConsole.Model
 		}
 
 		/// <summary>
-		/// 
+		/// This Method is used to make the producer run and switching between flaskes
 		/// </summary>
 		/// <param name="obj"></param>
 		internal void Run(object obj)

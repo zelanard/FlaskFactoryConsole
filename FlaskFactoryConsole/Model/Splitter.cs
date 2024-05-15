@@ -13,7 +13,7 @@ namespace FlaskFactoryConsole.Utils
         ConveyerBelt SodaBelt;
 
         /// <summary>
-        /// 
+        /// Initializes a new instances of the Splitter class with the specified belts required
         /// </summary>
         /// <param name="productionBelt"></param>
         /// <param name="beerBelt"></param>
@@ -25,7 +25,7 @@ namespace FlaskFactoryConsole.Utils
         }
 
         /// <summary>
-        /// 
+        /// Pushes the currentflask from the ProducerBelt into the represented belt
         /// </summary>
         /// <param name="flaskType"></param>
         public void Push(object obj)
