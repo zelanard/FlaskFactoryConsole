@@ -6,7 +6,7 @@ using System.Threading;
 namespace FlaskFactoryConsole.Control
 {
     /// <summary>
-    /// 
+    /// This is our main Controller
     /// </summary>
     public class Factory
     {
@@ -18,9 +18,10 @@ namespace FlaskFactoryConsole.Control
         public static EndConsumer BeerConsumer = new EndConsumer(BeerBelt, "BeerConsumer");
         public static EndConsumer SodaConsumer = new EndConsumer(SodaBelt, "SodaConsumer");
 
-		/// The Factory class controls a beverage production line simulation.
-		/// It uses multiple threads to simulate the production, splitting, and consumption of flasks.
-		public void Run()
+        /// <summary>
+        /// This method Runs the Whole project with the threads
+        /// </summary>
+        public void Run()
         {
             Thread ProductionThread = new Thread(Producer.Run);
 

@@ -10,7 +10,8 @@ namespace FlaskFactoryConsole.View
 		private string Title;
 
         /// <summary>
-        /// 
+        /// Initialzes a EndConsumer with the represented belt
+		/// And gives the EndConsumer a Title
         /// </summary>
         /// <param name="buffer"></param>
         public EndConsumer(ConveyerBelt buffer, string title) : base(buffer) 
@@ -19,7 +20,7 @@ namespace FlaskFactoryConsole.View
 		}
 
 		/// <summary>
-		/// 
+		/// Writes the Title, Flask Type, Flask ID to the console
 		/// </summary>
 		public void Print(object obj)
 		{

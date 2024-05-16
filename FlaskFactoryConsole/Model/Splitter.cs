@@ -13,7 +13,6 @@ namespace FlaskFactoryConsole.Utils
 		ConveyerBelt BeerBelt;
 		ConveyerBelt SodaBelt;
 
-<<<<<<< HEAD
 		/// <summary>
 		/// Constructor for the Splitter class. Initializes the production, beer, and soda belts.
 		/// </summary>
@@ -27,10 +26,9 @@ namespace FlaskFactoryConsole.Utils
 		}
 
 		/// <summary>
-		/// The Push method adds a flask to the respective beer or soda belt based on the flask type.
-		/// It also logs the splitting of the flask.
+		/// 
 		/// </summary>
-		/// <param name="flaskType">The type of flask to be split.</param>
+		/// <param name="flaskType"></param>
 		public void Push(object obj)
 		{
 			if (CurrentFlask != null)
@@ -53,35 +51,3 @@ namespace FlaskFactoryConsole.Utils
 		}
 	}
 }
-=======
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="flaskType"></param>
-        public void Push(object obj)
-        {
-            while (true)
-            {
-                if (CurrentFlask != null)
-                {
-                    switch (CurrentFlask.GetFlaskType())
-                    {
-                        case FlaskTypes.BeerFlask:
-                            BeerBelt.Enqueue(CurrentFlask);
-                            Logger.LogSplitting(FlaskTypes.BeerFlask.ToString(), CurrentFlask.ID, "BeerBelt");
-                            break;
-                        case FlaskTypes.SodaFlask:
-                            SodaBelt.Enqueue(CurrentFlask);
-                            Logger.LogSplitting(FlaskTypes.SodaFlask.ToString(), CurrentFlask.ID, "SodaBelt");
-                            break;
-                        default:
-                            break;
-                    }
-                    CurrentFlask = null;
-                }
-                Thread.Sleep(2f.ToMiliseconds());
-            }
-        }
-    }
-}
->>>>>>> d87458825c7242059b2d218e12823b095e69c8d8

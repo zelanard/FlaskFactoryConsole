@@ -6,7 +6,7 @@
     public interface IPusher
     {
         /// <summary>
-        /// 
+        /// A blueprint for the Push method
         /// </summary>
         /// <param name="obj"></param>
         void Push(object obj);
