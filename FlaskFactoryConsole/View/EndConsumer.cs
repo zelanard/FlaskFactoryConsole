@@ -2,26 +2,27 @@
 
 namespace FlaskFactoryConsole.View
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class EndConsumer : Consumer
-    {
+	/// <summary>
+	/// Represents an end consumer in the factory.
+	/// </summary>
+	public class EndConsumer : Consumer
+	{
 		private string Title;
 
-        /// <summary>
-        /// Initialzes a EndConsumer with the represented belt
-		/// And gives the EndConsumer a Title
-        /// </summary>
-        /// <param name="buffer"></param>
-        public EndConsumer(ConveyerBelt buffer, string title) : base(buffer) 
+		/// <summary>
+		/// Initializes a new instance of the EndConsumer class with the specified conveyor belt and title.
+		/// </summary>
+		/// <param name="buffer">The conveyor belt that the end consumer will use.</param>
+		/// <param name="title">The title of the end consumer.</param>
+		public EndConsumer(ConveyerBelt buffer, string title) : base(buffer)
 		{
 			Title = title;
 		}
 
 		/// <summary>
-		/// Writes the Title, Flask Type, Flask ID to the console
+		/// Prints the title, flask type, and flask ID to the console.
 		/// </summary>
+		/// <param name="obj">The object to print.</param>
 		public void Print(object obj)
 		{
 			while (true)

@@ -13,19 +13,19 @@ namespace FlaskFactoryConsole.Utils
         private Queue<Flask> flasks;
         private readonly object lockObject = new object();
 
-		/// <summary>
-		/// Constructor for the ConveyerBelt class. Initializes an empty queue of flasks.
-		/// </summary>
-		public ConveyerBelt()
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConveyerBelt()
         {
             flasks = new Queue<Flask>();
         }
 
-		/// <summary>
-		/// Adds a flask to the end of the conveyer belt, if there is room.
-		/// </summary>
-		/// <param name="item">The flask to be added to the conveyer belt.</param>
-		public void Enqueue(Flask item)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        public void Enqueue(Flask item)
         {
             lock (lockObject)
             {
@@ -36,11 +36,11 @@ namespace FlaskFactoryConsole.Utils
             }
         }
 
-		/// <summary>
-		/// Removes and returns the flask at the front of the conveyer belt.
-		/// </summary>
-		/// <returns>The flask at the front of the conveyer belt, or null if the belt is empty.</returns>
-		public Flask Dequeue()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Flask Dequeue()
         {
             lock (lockObject)
             {
@@ -48,10 +48,10 @@ namespace FlaskFactoryConsole.Utils
             }
         }
 
-		/// <summary>
-		/// Gets the number of flasks currently on the conveyer belt.
-		/// </summary>
-		public int Count
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Count
         {
             get
             {
