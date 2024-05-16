@@ -34,5 +34,22 @@ namespace FlaskFactoryConsole.View
 				}
 			}
 		}
-	}
+
+        public override void Pull(object obj)
+        {
+            {
+                while (true)
+                {
+                    lock (this)
+                    {
+                        if (CurrentFlask == null && Buffer.Count > 0)
+                        {
+                            CurrentFlask = Buffer.Dequeue();
+                            Logger.LogPulling(CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID, Title);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

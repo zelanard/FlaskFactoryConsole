@@ -41,7 +41,7 @@ namespace FlaskFactoryConsole.View
         public static void LogPulling(string flaskType, int id, string belt)
         {
             SetColor(flaskType);
-            Console.WriteLine($"Pulled from {belt}: {flaskType}, ID: {id}");
+            Console.WriteLine($"Pulled by {belt}: {flaskType}, ID: {id}");
             Console.ResetColor();
         }
 

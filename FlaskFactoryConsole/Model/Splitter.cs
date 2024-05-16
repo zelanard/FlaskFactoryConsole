@@ -24,11 +24,28 @@ namespace FlaskFactoryConsole.Utils
             SodaBelt = sodaBelt;
         }
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="flaskType"></param>
-		public void Push(object obj)
+        public override void Pull(object obj)
+        {
+            {
+                while (true)
+                {
+                    lock (this)
+                    {
+                        if (CurrentFlask == null && Buffer.Count > 0)
+                        {
+                            CurrentFlask = Buffer.Dequeue();
+                            Logger.LogPulling(CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID, "Splitter");
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="flaskType"></param>
+        public void Push(object obj)
 		{
             while (true)
             {

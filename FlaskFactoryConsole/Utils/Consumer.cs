@@ -31,19 +31,6 @@ namespace FlaskFactoryConsole.Utils
         /// Consumes a flask from the buffer based on the specified flask ID.
         /// </summary>
         /// <param name="id">The ID of the flask to be consumed.</param>
-        public void Pull(object obj)
-        {
-            while (true)
-            {
-                lock (this)
-                {
-                    if (CurrentFlask == null && Buffer.Count > 0)
-                    {
-                        CurrentFlask = Buffer.Dequeue();
-                        Logger.LogPulling(CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID, "");
-                    }
-                }
-            }
-        }
+        public abstract void Pull(object obj);
     }
 }
