@@ -5,7 +5,7 @@ using System.Threading;
 namespace FlaskFactoryConsole.Utils
 {
     /// <summary>
-    /// 
+    /// <c>Splitter</c> models a splitter. It pulls from one conveyerbelt and sort the flasks on the two other conveyer belts.
     /// </summary>
     public class Splitter : Consumer, IPusher
     {

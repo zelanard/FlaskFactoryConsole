@@ -6,7 +6,7 @@ using System.Threading;
 namespace FlaskFactoryConsole.Control
 {
     /// <summary>
-    /// This is our main Controller
+    /// Main controller for managing the factory operations.
     /// </summary>
     public class Factory
     {
@@ -19,7 +19,7 @@ namespace FlaskFactoryConsole.Control
         public static EndConsumer SodaConsumer = new EndConsumer(SodaBelt, "SodaConsumer");
 
         /// <summary>
-        /// This method Runs the Whole project with the threads
+        /// Runs the entire factory process using multiple threads.
         /// </summary>
         public void Run()
         {

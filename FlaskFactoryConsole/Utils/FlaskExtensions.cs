@@ -4,7 +4,7 @@ using System;
 namespace FlaskFactoryConsole.Utils
 {
     /// <summary>
-    /// 
+    /// Adds Extention methods to Flask
     /// </summary>
     public static class FlaskExtensions
     {

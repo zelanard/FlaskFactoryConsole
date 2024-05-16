@@ -3,7 +3,7 @@
 namespace FlaskFactoryConsole.Utils
 {
     /// <summary>
-    /// 
+    /// Adds extension methods to numeric data types.
     /// </summary>
     public static class NumberExtension
     {

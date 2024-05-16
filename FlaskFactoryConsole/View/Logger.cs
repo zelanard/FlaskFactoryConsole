@@ -3,12 +3,12 @@
 namespace FlaskFactoryConsole.View
 {
     /// <summary>
-    /// 
+    /// handles the logging output.
     /// </summary>
     public static class Logger
     {
         /// <summary>
-        /// 
+        /// Generate logmessage when producing flasks
         /// </summary>
         /// <param name="flaskType"></param>
         /// <param name="id"></param>
@@ -20,7 +20,7 @@ namespace FlaskFactoryConsole.View
         }
 
         /// <summary>
-        /// 
+        /// Generate Log message from splitting flasks.
         /// </summary>
         /// <param name="flaskType"></param>
         /// <param name="id"></param>
@@ -33,7 +33,7 @@ namespace FlaskFactoryConsole.View
         }
 
 		/// <summary>
-		/// 
+		/// Generate log message for pulling of flasks
 		/// </summary>
 		/// <param name="flaskType"></param>
 		/// <param name="id"></param>
@@ -59,7 +59,7 @@ namespace FlaskFactoryConsole.View
 		}
 
         /// <summary>
-        /// 
+        /// Set the foregroundColor of the console.
         /// </summary>
         /// <param name="flaskType"></param>
         private static void SetColor(string flaskType)

@@ -6,9 +6,9 @@ using System.Threading;
 
 namespace FlaskFactoryConsole.Model
 {
-	/// <summary>
-	/// 
-	/// </summary>
+    /// <summary>
+    /// <c>Producer</c> models a flask producer.
+    /// </summary>
 	public class Producer : IPusher
 	{
 		/// <summary>
