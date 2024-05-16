@@ -6,13 +6,13 @@ using System.Threading;
 
 namespace FlaskFactoryConsole.Model
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Producer : IPusher
+	/// <summary>
+	/// 
+	/// </summary>
+	public class Producer : IPusher
 	{
 		/// <summary>
-		/// 
+		/// The production belt where the producer places the flasks.
 		/// </summary>
 		public ConveyerBelt ProductionBelt;
 		int FlasksProduced = 0;
@@ -22,9 +22,10 @@ namespace FlaskFactoryConsole.Model
 		}
 
 		/// <summary>
-		/// 
+		/// The Push method adds a flask to the production belt if there is room.
+		/// It also logs the production of the flask.
 		/// </summary>
-		/// <param name="flaskType"></param>
+		/// <param name="flaskType">The type of flask to be produced.</param>
 		public void Push(object flaskType)
 		{
 			if (ProductionBelt.Count < ConveyerBelt.MAX_SIZE)
@@ -47,7 +48,8 @@ namespace FlaskFactoryConsole.Model
 		}
 
 		/// <summary>
-		/// 
+		/// The Run method starts the production process.
+		/// It alternates between producing beer and soda flasks.
 		/// </summary>
 		/// <param name="obj"></param>
 		internal void Run(object obj)

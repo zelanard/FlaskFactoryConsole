@@ -8,13 +8,13 @@ namespace FlaskFactoryConsole.Utils
     /// </summary>
     public static class FlaskExtensions
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="flask"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static FlaskTypes GetFlaskType(this Flask flask)
+		/// <summary>
+		/// Determines the type of the flask.
+		/// </summary>
+		/// <param name="flask">The flask whose type is to be determined.</param>
+		/// <returns>The type of the flask.</returns>
+		/// <exception cref="NotImplementedException">Thrown when the flask type is not supported.</exception>
+		public static FlaskTypes GetFlaskType(this Flask flask)
         {
             switch (flask)
             {

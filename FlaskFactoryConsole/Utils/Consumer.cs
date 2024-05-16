@@ -1,5 +1,6 @@
 ﻿using FlaskFactoryConsole.Model.Flasks;
-
+using FlaskFactoryConsole.Utils;
+using FlaskFactoryConsole.View;
 namespace FlaskFactoryConsole.Utils
 {
     /// <summary>
@@ -39,6 +40,7 @@ namespace FlaskFactoryConsole.Utils
                     if (CurrentFlask == null && Buffer.Count > 0)
                     {
                         CurrentFlask = Buffer.Dequeue();
+                        Logger.LogPulling(CurrentFlask.GetFlaskType().ToString(), CurrentFlask.ID, "");
                     }
                 }
             }

@@ -3,10 +3,11 @@ using FlaskFactoryConsole.Model.Flasks;
 
 namespace FlaskFactoryConsole.Utils
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class ConveyerBelt
+	/// <summary>
+	/// The ConveyerBelt class represents a conveyer belt in a factory production line.
+	/// It uses a queue to simulate the line of flasks moving along the belt.
+	/// </summary>
+	public class ConveyerBelt
     {
         public const int MAX_SIZE = 99;
         private Queue<Flask> flasks;
